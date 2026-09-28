@@ -1,0 +1,2944 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Barbearia Jardel Gomes - A melhor barbearia de Porto Velho. Cortes, barba, sobrancelha e Nano Fio. Agende agora!">
+    <meta name="keywords"
+        content="barbearia, Porto Velho, corte de cabelo, barba, Jardel Gomes, Nano Fio, barbearia premium">
+    <meta name="author" content="Barbearia Jardel Gomes">
+    <meta property="og:title" content="Barbearia Jardel Gomes | Porto Velho - RO">
+    <meta property="og:description"
+        content="Tradição, estilo e sofisticação. A experiência premium em barbearia que você merece.">
+    <meta property="og:image" content="assets/logo.png">
+    <meta property="og:type" content="website">
+    <title>Barbearia Jardel Gomes | Porto Velho - RO</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="icon" type="image/png" href="assets/logo.png">
+
+    <style>
+        /* ============================================
+           CSS CUSTOM PROPERTIES (Design Tokens)
+           ============================================ */
+        :root {
+            /* Brand Colors */
+            --color-primary: #8B7355;
+            --color-primary-light: #A08B6E;
+            --color-primary-dark: #6B5740;
+            --color-primary-darker: #4A3D2C;
+
+            /* Neutrals */
+            --color-black: #0A0A0A;
+            --color-dark: #1A1A1A;
+            --color-dark-soft: #2A2A2A;
+            --color-gray-900: #111111;
+            --color-gray-800: #1E1E1E;
+            --color-gray-700: #333333;
+            --color-gray-600: #4A4A4A;
+            --color-gray-500: #666666;
+            --color-gray-400: #888888;
+            --color-gray-300: #AAAAAA;
+            --color-gray-200: #CCCCCC;
+            --color-gray-100: #E8E8E8;
+            --color-white: #FFFFFF;
+            --color-cream: #F5F0EB;
+            --color-warm-white: #FAF8F5;
+
+            /* Accent */
+            --color-gold: #C8A96E;
+            --color-gold-light: #D4BA85;
+            --color-gold-dark: #B8944F;
+
+            /* Typography */
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-accent: 'Cormorant Garamond', Georgia, serif;
+
+            /* Spacing */
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --space-3xl: 4rem;
+            --space-4xl: 6rem;
+            --space-5xl: 8rem;
+
+            /* Border Radius */
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+            --radius-full: 9999px;
+
+            /* Transitions */
+            --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-spring: 600ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+            /* Shadows */
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.15);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.2);
+            --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.3);
+            --shadow-glow: 0 0 40px rgba(200, 169, 110, 0.15);
+        }
+
+        /* ============================================
+           RESET & BASE
+           ============================================ */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-black);
+            color: var(--color-gray-200);
+            line-height: 1.7;
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color var(--transition-base);
+        }
+
+        ul,
+        ol {
+            list-style: none;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-family: inherit;
+        }
+
+        ::selection {
+            background: var(--color-gold);
+            color: var(--color-black);
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--color-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--color-primary);
+            border-radius: var(--radius-full);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--color-gold);
+        }
+
+        /* ============================================
+           UTILITY CLASSES
+           ============================================ */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-xl);
+        }
+
+        .container-wide {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--space-xl);
+        }
+
+        .section-padding {
+            padding: var(--space-5xl) 0;
+        }
+
+        .text-gold {
+            color: var(--color-gold);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Section Header */
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-4xl);
+        }
+
+        .section-label {
+            font-family: var(--font-accent);
+            font-size: 1rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--color-gold);
+            margin-bottom: var(--space-md);
+            display: block;
+            font-weight: 400;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: var(--color-white);
+            line-height: 1.15;
+            margin-bottom: var(--space-lg);
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--color-gray-400);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .divider {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+            margin: var(--space-lg) auto;
+        }
+
+        /* Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-scale.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* ============================================
+           PRELOADER
+           ============================================ */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--color-black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+
+        .preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .preloader-content {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .preloader-logo {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            margin: 0 auto;
+            display: block;
+            animation: pulse-gold 1.5s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px rgba(200, 169, 110, 0.3));
+        }
+
+        .preloader-bar {
+            width: 200px;
+            height: 2px;
+            background: var(--color-gray-800);
+            margin: var(--space-xl) auto 0;
+            border-radius: var(--radius-full);
+            overflow: hidden;
+        }
+
+        .preloader-bar-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--color-gold-dark), var(--color-gold-light));
+            border-radius: var(--radius-full);
+            animation: loading 1.8s ease-in-out forwards;
+        }
+
+        @keyframes loading {
+            0% {
+                width: 0%;
+            }
+
+            50% {
+                width: 70%;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        @keyframes pulse-gold {
+
+            0%,
+            100% {
+                opacity: 0.7;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+        }
+
+        /* ============================================
+           NAVIGATION
+           ============================================ */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: var(--space-lg) 0;
+            transition: all var(--transition-slow);
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 10, 10, 0.92);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            padding: var(--space-md) 0;
+            border-bottom: 1px solid rgba(200, 169, 110, 0.1);
+        }
+
+        .navbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .navbar-logo img {
+            height: 48px;
+            width: auto;
+            transition: var(--transition-base);
+        }
+
+        .navbar.scrolled .navbar-logo img {
+            height: 40px;
+        }
+
+        .navbar-links {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2xl);
+        }
+
+        .navbar-links a {
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-gray-300);
+            position: relative;
+            padding: var(--space-xs) 0;
+        }
+
+        .navbar-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--color-gold);
+            transition: width var(--transition-base);
+        }
+
+        .navbar-links a:hover {
+            color: var(--color-gold);
+        }
+
+        .navbar-links a:hover::after {
+            width: 100%;
+        }
+
+        .navbar-cta {
+            background: transparent;
+            border: 1.5px solid var(--color-gold) !important;
+            color: var(--color-gold) !important;
+            padding: 10px 24px !important;
+            border-radius: var(--radius-full);
+            font-size: 0.82rem !important;
+            font-weight: 600 !important;
+            letter-spacing: 0.1em !important;
+            text-transform: uppercase;
+            transition: all var(--transition-base) !important;
+        }
+
+        .navbar-cta:hover {
+            background: var(--color-gold) !important;
+            color: var(--color-black) !important;
+            box-shadow: 0 0 30px rgba(200, 169, 110, 0.3) !important;
+        }
+
+        .navbar-cta::after {
+            display: none !important;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            padding: 4px;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            width: 28px;
+            height: 2px;
+            background: var(--color-white);
+            transition: all var(--transition-base);
+            transform-origin: center;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -6px);
+        }
+
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.1);
+            animation: heroZoom 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes heroZoom {
+            0% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1.2);
+            }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg,
+                    rgba(0, 0, 0, 0.4) 0%,
+                    rgba(0, 0, 0, 0.5) 40%,
+                    rgba(0, 0, 0, 0.7) 70%,
+                    rgba(0, 0, 0, 0.85) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            padding: 0 var(--space-xl);
+        }
+
+        .hero-logo {
+            width: 180px;
+            height: auto;
+            margin: 0 auto var(--space-2xl);
+            filter: drop-shadow(0 0 40px rgba(200, 169, 110, 0.2));
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .hero-tagline {
+            font-family: var(--font-accent);
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--color-gold);
+            margin-bottom: var(--space-lg);
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            font-weight: 800;
+            color: var(--color-white);
+            line-height: 1.05;
+            margin-bottom: var(--space-xl);
+            animation: fadeInUp 1s ease-out 0.7s both;
+        }
+
+        .hero-title em {
+            font-style: italic;
+            color: var(--color-gold);
+            font-weight: 600;
+        }
+
+        .hero-description {
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            color: var(--color-gray-300);
+            max-width: 550px;
+            margin: 0 auto var(--space-2xl);
+            line-height: 1.8;
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: var(--space-lg);
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 1.1s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 16px 40px;
+            border-radius: var(--radius-full);
+            transition: all var(--transition-base);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--color-gold);
+            color: var(--color-black);
+        }
+
+        .btn-primary:hover {
+            background: var(--color-gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(200, 169, 110, 0.4);
+        }
+
+        .btn-outline {
+            border: 1.5px solid rgba(255, 255, 255, 0.3);
+            color: var(--color-white);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--color-gold);
+            color: var(--color-gold);
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: var(--color-white);
+        }
+
+        .btn-whatsapp:hover {
+            background: #20BD5A;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        /* Hero scroll indicator */
+        .hero-scroll {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-sm);
+            animation: fadeInUp 1s ease-out 1.5s both;
+        }
+
+        .hero-scroll span {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--color-gray-500);
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, var(--color-gold), transparent);
+            animation: scrollPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollPulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scaleY(1);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scaleY(0.6);
+            }
+        }
+
+        /* ============================================
+           MARQUEE STRIP
+           ============================================ */
+        .marquee-strip {
+            background: var(--color-gold);
+            padding: 14px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .marquee-content {
+            display: flex;
+            animation: marquee 30s linear infinite;
+            white-space: nowrap;
+        }
+
+        .marquee-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xl);
+            padding: 0 var(--space-2xl);
+            font-family: var(--font-accent);
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-black);
+        }
+
+        .marquee-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--color-black);
+            border-radius: 50%;
+            opacity: 0.4;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* ============================================
+           ABOUT SECTION
+           ============================================ */
+        .about {
+            background: var(--color-dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(200, 169, 110, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-4xl);
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: var(--space-2xl);
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        }
+
+        .about-image-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            background: rgba(200, 169, 110, 0.2);
+            border: 1px solid rgba(200, 169, 110, 0.3);
+            padding: 8px 20px;
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--color-gold);
+            letter-spacing: 0.1em;
+        }
+
+        .about-text h3 {
+            font-family: var(--font-display);
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: var(--color-white);
+            line-height: 1.2;
+            margin-bottom: var(--space-xl);
+        }
+
+        .about-text p {
+            font-size: 1.05rem;
+            color: var(--color-gray-400);
+            margin-bottom: var(--space-lg);
+            line-height: 1.9;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-xl);
+            margin-top: var(--space-2xl);
+            padding-top: var(--space-2xl);
+            border-top: 1px solid var(--color-gray-700);
+        }
+
+        .about-stat {
+            text-align: center;
+        }
+
+        .about-stat-number {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-gold);
+            line-height: 1;
+            margin-bottom: var(--space-xs);
+        }
+
+        .about-stat-label {
+            font-size: 0.8rem;
+            color: var(--color-gray-500);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        /* ============================================
+           SERVICES SECTION
+           ============================================ */
+        .services {
+            background: var(--color-black);
+            position: relative;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-xl);
+        }
+
+        .service-card {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            background: var(--color-dark);
+            border: 1px solid var(--color-gray-800);
+            transition: all var(--transition-slow);
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(200, 169, 110, 0.3);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .service-card-image {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+        }
+
+        .service-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .service-card:hover .service-card-image img {
+            transform: scale(1.1);
+        }
+
+        .service-card-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60%;
+            background: linear-gradient(transparent, var(--color-dark));
+        }
+
+        .service-card-content {
+            padding: var(--space-xl) var(--space-xl) var(--space-2xl);
+            position: relative;
+        }
+
+        .service-card-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-black);
+            margin-bottom: var(--space-lg);
+            margin-top: -40px;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 4px 15px rgba(200, 169, 110, 0.3);
+        }
+
+        .service-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--color-white);
+            margin-bottom: var(--space-sm);
+        }
+
+        .service-card p {
+            font-size: 0.9rem;
+            color: var(--color-gray-500);
+            line-height: 1.7;
+            margin-bottom: var(--space-lg);
+        }
+
+        .service-card-price {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .service-price {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-gold);
+        }
+
+        .service-card-arrow {
+            width: 36px;
+            height: 36px;
+            border: 1.5px solid var(--color-gray-700);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-gray-500);
+            transition: all var(--transition-base);
+        }
+
+        .service-card:hover .service-card-arrow {
+            background: var(--color-gold);
+            border-color: var(--color-gold);
+            color: var(--color-black);
+            transform: rotate(-45deg);
+        }
+
+        /* ============================================
+           EXPERIENCE STRIP
+           ============================================ */
+        .experience-strip {
+            background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary-darker) 100%);
+            padding: var(--space-4xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experience-strip::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><path d="M30 0L60 30L30 60L0 30Z" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></svg>') repeat;
+            opacity: 0.5;
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-2xl);
+            position: relative;
+        }
+
+        .experience-item {
+            text-align: center;
+            padding: var(--space-xl);
+        }
+
+        .experience-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto var(--space-lg);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-gold-light);
+        }
+
+        .experience-item h4 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--color-white);
+            margin-bottom: var(--space-sm);
+        }
+
+        .experience-item p {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           GALLERY SECTION
+           ============================================ */
+        .gallery {
+            background: var(--color-dark);
+            overflow: hidden;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 250px);
+            gap: var(--space-md);
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+        }
+
+        .gallery-item:nth-child(1) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity var(--transition-base);
+        }
+
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item-overlay i {
+            color: var(--color-gold);
+        }
+
+        /* ============================================
+           TESTIMONIALS SECTION
+           ============================================ */
+        .testimonials {
+            background: var(--color-black);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials::before {
+            content: '"';
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: var(--font-display);
+            font-size: 25rem;
+            color: rgba(200, 169, 110, 0.03);
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .testimonials-slider {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .testimonial-card {
+            min-width: 100%;
+            padding: 0 var(--space-xl);
+        }
+
+        .testimonial-inner {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .testimonial-stars {
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+            margin-bottom: var(--space-xl);
+        }
+
+        .testimonial-stars svg {
+            fill: var(--color-gold);
+            color: var(--color-gold);
+        }
+
+        .testimonial-text {
+            font-family: var(--font-accent);
+            font-size: clamp(1.3rem, 3vw, 1.75rem);
+            font-style: italic;
+            color: var(--color-gray-200);
+            line-height: 1.8;
+            margin-bottom: var(--space-2xl);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-md);
+        }
+
+        .testimonial-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--color-gold), var(--color-primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--color-white);
+        }
+
+        .testimonial-author-info h5 {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--color-white);
+        }
+
+        .testimonial-author-info span {
+            font-size: 0.8rem;
+            color: var(--color-gray-500);
+        }
+
+        .testimonials-nav {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-md);
+            margin-top: var(--space-2xl);
+        }
+
+        .testimonials-nav button {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 1.5px solid var(--color-gray-700);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-gray-400);
+            transition: all var(--transition-base);
+        }
+
+        .testimonials-nav button:hover {
+            border-color: var(--color-gold);
+            color: var(--color-gold);
+        }
+
+        .testimonials-dots {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-sm);
+            margin-top: var(--space-xl);
+        }
+
+        .testimonials-dots button {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--color-gray-700);
+            transition: all var(--transition-base);
+        }
+
+        .testimonials-dots button.active {
+            background: var(--color-gold);
+            width: 24px;
+            border-radius: var(--radius-full);
+        }
+
+        /* ============================================
+           PRICING SECTION
+           ============================================ */
+        .pricing {
+            background: var(--color-dark);
+        }
+
+        .pricing-table {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--color-gray-900);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            border: 1px solid var(--color-gray-800);
+        }
+
+        .pricing-header {
+            background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary-darker));
+            padding: var(--space-2xl) var(--space-2xl);
+            text-align: center;
+        }
+
+        .pricing-header h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-white);
+            margin-bottom: var(--space-xs);
+        }
+
+        .pricing-header p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .pricing-list {
+            padding: var(--space-md) 0;
+        }
+
+        .pricing-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--space-lg) var(--space-2xl);
+            border-bottom: 1px solid var(--color-gray-800);
+            transition: background var(--transition-fast);
+        }
+
+        .pricing-item:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-item:hover {
+            background: rgba(200, 169, 110, 0.03);
+        }
+
+        .pricing-item-info {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .pricing-item-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--color-gold);
+            flex-shrink: 0;
+        }
+
+        .pricing-item-name {
+            font-weight: 500;
+            color: var(--color-white);
+            font-size: 1rem;
+        }
+
+        .pricing-item-duration {
+            font-size: 0.8rem;
+            color: var(--color-gray-500);
+            margin-top: 2px;
+        }
+
+        .pricing-item-price {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-gold);
+            white-space: nowrap;
+        }
+
+        .pricing-footer {
+            padding: var(--space-xl) var(--space-2xl);
+            text-align: center;
+            border-top: 1px solid var(--color-gray-800);
+        }
+
+        /* ============================================
+           LOCATION / CONTACT SECTION
+           ============================================ */
+        .contact {
+            background: var(--color-black);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-4xl);
+            align-items: start;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2xl);
+        }
+
+        .contact-info h3 {
+            font-family: var(--font-display);
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: var(--color-white);
+            line-height: 1.2;
+        }
+
+        .contact-detail {
+            display: flex;
+            gap: var(--space-lg);
+            align-items: start;
+        }
+
+        .contact-detail-icon {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            background: rgba(200, 169, 110, 0.1);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-gold);
+        }
+
+        .contact-detail h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-white);
+            margin-bottom: var(--space-xs);
+        }
+
+        .contact-detail p,
+        .contact-detail a {
+            font-size: 0.95rem;
+            color: var(--color-gray-400);
+            line-height: 1.6;
+        }
+
+        .contact-detail a:hover {
+            color: var(--color-gold);
+        }
+
+        .contact-hours {
+            margin-top: var(--space-lg);
+        }
+
+        .contact-hours-grid {
+            display: grid;
+            gap: var(--space-sm);
+            margin-top: var(--space-md);
+        }
+
+        .contact-hours-row {
+            display: flex;
+            justify-content: space-between;
+            padding: var(--space-sm) 0;
+            border-bottom: 1px solid var(--color-gray-800);
+            font-size: 0.9rem;
+        }
+
+        .contact-hours-row .day {
+            color: var(--color-gray-400);
+        }
+
+        .contact-hours-row .time {
+            color: var(--color-white);
+            font-weight: 500;
+        }
+
+        .contact-hours-row .time.closed {
+            color: #e74c3c;
+        }
+
+        .contact-map {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            height: 500px;
+            border: 1px solid var(--color-gray-800);
+        }
+
+        .contact-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: grayscale(0.7) contrast(1.1) brightness(0.8);
+            transition: filter var(--transition-base);
+        }
+
+        .contact-map:hover iframe {
+            filter: grayscale(0.3) contrast(1) brightness(0.9);
+        }
+
+        /* ============================================
+           CTA SECTION
+           ============================================ */
+        .cta-section {
+            background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary-darker) 100%);
+            padding: var(--space-5xl) 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(200, 169, 110, 0.08) 0%, transparent 60%);
+            animation: ctaGlow 10s ease-in-out infinite;
+        }
+
+        @keyframes ctaGlow {
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(5%, 5%);
+            }
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-content h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: var(--space-lg);
+        }
+
+        .cta-content p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 500px;
+            margin: 0 auto var(--space-2xl);
+            line-height: 1.8;
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .footer {
+            background: var(--color-gray-900);
+            border-top: 1px solid var(--color-gray-800);
+        }
+
+        .footer-top {
+            padding: var(--space-4xl) 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: var(--space-3xl);
+        }
+
+        .footer-brand {
+            max-width: 300px;
+        }
+
+        .footer-brand img {
+            height: 60px;
+            margin-bottom: var(--space-lg);
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            color: var(--color-gray-500);
+            line-height: 1.8;
+            margin-bottom: var(--space-xl);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: var(--space-md);
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid var(--color-gray-700);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-gray-400);
+            transition: all var(--transition-base);
+        }
+
+        .footer-social a:hover {
+            border-color: var(--color-gold);
+            color: var(--color-gold);
+            background: rgba(200, 169, 110, 0.1);
+        }
+
+        .footer-column h4 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-white);
+            margin-bottom: var(--space-xl);
+        }
+
+        .footer-column ul {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+
+        .footer-column a {
+            font-size: 0.9rem;
+            color: var(--color-gray-500);
+            transition: all var(--transition-base);
+        }
+
+        .footer-column a:hover {
+            color: var(--color-gold);
+            padding-left: 4px;
+        }
+
+        .footer-bottom {
+            padding: var(--space-xl) 0;
+            border-top: 1px solid var(--color-gray-800);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            font-size: 0.8rem;
+            color: var(--color-gray-600);
+        }
+
+        .footer-bottom a {
+            color: var(--color-gold);
+        }
+
+        /* ============================================
+           WHATSAPP FLOATING BUTTON
+           ============================================ */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: all var(--transition-base);
+            animation: whatsappPulse 2s ease-in-out infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-float svg {
+            color: white;
+            width: 30px;
+            height: 30px;
+        }
+
+        @keyframes whatsappPulse {
+
+            0%,
+            100% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 4px 30px rgba(37, 211, 102, 0.6), 0 0 0 8px rgba(37, 211, 102, 0.1);
+            }
+        }
+
+        /* Back to top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 100px;
+            width: 44px;
+            height: 44px;
+            background: var(--color-dark);
+            border: 1px solid var(--color-gray-700);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-gold);
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-base);
+            z-index: 998;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--color-gold);
+            color: var(--color-black);
+            border-color: var(--color-gold);
+            transform: translateY(-3px);
+        }
+
+        /* ============================================
+           RESPONSIVE DESIGN
+           ============================================ */
+        @media (max-width: 1024px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-2xl);
+            }
+
+            .about-image img {
+                height: 350px;
+            }
+
+            .experience-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, 200px);
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-map {
+                height: 350px;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                padding: 0 var(--space-md);
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .navbar-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background: rgba(10, 10, 10, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: center;
+                gap: var(--space-2xl);
+                transition: right var(--transition-slow);
+            }
+
+            .navbar-links.active {
+                right: 0;
+            }
+
+            .navbar-links a {
+                font-size: 1.2rem;
+            }
+
+            .hero-title {
+                font-size: clamp(2rem, 8vw, 3rem);
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+
+            .gallery-item:nth-child(1) {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            .gallery-item {
+                height: 250px;
+            }
+
+            .about-stats {
+                grid-template-columns: repeat(3, 1fr);
+                gap: var(--space-md);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: var(--space-md);
+                text-align: center;
+            }
+
+            .section-padding {
+                padding: var(--space-4xl) 0;
+            }
+
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .back-to-top {
+                right: 80px;
+                bottom: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 var(--space-md);
+            }
+
+            .hero-logo {
+                width: 120px;
+            }
+
+            .pricing-item {
+                padding: var(--space-md) var(--space-lg);
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+
+        /* ============================================
+           COUNTER ANIMATION
+           ============================================ */
+        .counter {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <img src="assets/logo.png" alt="Barbearia Jardel Gomes" class="preloader-logo">
+            <div class="preloader-bar">
+                <div class="preloader-bar-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <div class="container-wide navbar-inner">
+            <a href="#inicio" class="navbar-logo">
+                <img src="assets/logo.png" alt="Barbearia Jardel Gomes">
+            </a>
+            <div class="navbar-links" id="navLinks">
+                <a href="#inicio">Início</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#galeria">Galeria</a>
+                <a href="#precos">Preços</a>
+                <a href="#contato">Contato</a>
+                <a href="https://wa.me/5569992373924?text=Olá! Gostaria de agendar um horário." target="_blank"
+                    class="navbar-cta">Agendar</a>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="inicio">
+        <div class="hero-bg">
+            <img src="assets/hero.jpg" alt="Barbearia Jardel Gomes Interior">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <img src="assets/logo.png" alt="Barbearia Jardel Gomes" class="hero-logo">
+            <p class="hero-tagline">Porto Velho — Rondônia</p>
+            <h1 class="hero-title">
+                Tradição, Estilo &<br><em>Sofisticação</em>
+            </h1>
+            <p class="hero-description">
+                A experiência premium em barbearia que você merece. Cortes precisos, barbas impecáveis e um atendimento
+                de excelência.
+            </p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/5569992373924?text=Olá! Gostaria de agendar um horário na Barbearia Jardel Gomes."
+                    target="_blank" class="btn btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    Agendar Horário
+                </a>
+                <a href="#servicos" class="btn btn-outline">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                    Nossos Serviços
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- MARQUEE STRIP -->
+    <div class="marquee-strip">
+        <div class="marquee-content">
+            <div class="marquee-item"><span class="marquee-dot"></span> Corte Masculino</div>
+            <div class="marquee-item"><span class="marquee-dot"></span> Barba & Bigode</div>
+            <div class="marquee-item"><span class="marquee-dot"></span> Sobrancelha</div>
+            <div class="marquee-item"><span class="marquee-dot"></span> Nano Fio</div>
+            <div class="marquee-item"><span class="marquee-dot"></span> Atendimento Unissex</div>
+            <div class="marquee-item"><span class="marquee-dot"></span> Corte Masculino</div>
+            <div class="marquee-item"><span class="marquee-dot"></span> Barba & Bigode</div>
+            <div class="marquee-item"><span class="marquee-dot"></span> Sobrancelha</div>
+            <div class="marquee-item"><span class="marquee-dot"></span> Nano Fio</div>
+            <div class="marquee-item"><span class="marquee-dot"></span> Atendimento Unissex</div>
+            <div class="marquee-item"><span class="marquee-dot"></span> Corte Masculino</div>
+            <div class="marquee-item"><span class="marquee-dot"></span> Barba & Bigode</div>
+            <div class="marquee-item"><span class="marquee-dot"></span> Sobrancelha</div>
+            <div class="marquee-item"><span class="marquee-dot"></span> Nano Fio</div>
+            <div class="marquee-item"><span class="marquee-dot"></span> Atendimento Unissex</div>
+        </div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <section class="about section-padding" id="sobre">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image reveal-left">
+                    <img src="assets/about.jpg" alt="Barbearia Jardel Gomes Fachada">
+                    <div class="about-image-overlay">
+                        <div class="about-image-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                            Referência em Porto Velho
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text reveal-right">
+                    <span class="section-label">Sobre Nós</span>
+                    <h3>Mais que uma barbearia,<br>uma <span class="text-gold">experiência</span>.</h3>
+                    <p>
+                        A Barbearia Jardel Gomes nasceu da paixão pela arte de cuidar. Com uma equipe altamente
+                        qualificada e um ambiente sofisticado, oferecemos uma experiência completa que vai além do corte
+                        de cabelo.
+                    </p>
+                    <p>
+                        Localizada no coração do bairro Industrial em Porto Velho, nossa barbearia combina técnicas
+                        tradicionais com as tendências mais modernas, garantindo que cada cliente saia com o visual
+                        perfeito.
+                    </p>
+                    <div class="about-stats">
+                        <div class="about-stat">
+                            <div class="about-stat-number counter" data-target="3500">0</div>
+                            <div class="about-stat-label">Seguidores</div>
+                        </div>
+                        <div class="about-stat">
+                            <div class="about-stat-number counter" data-target="130">0</div>
+                            <div class="about-stat-label">Publicações</div>
+                        </div>
+                        <div class="about-stat">
+                            <div class="about-stat-number">5<span style="font-size:0.6em">.0</span></div>
+                            <div class="about-stat-label">Avaliação</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services section-padding" id="servicos">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Nossos Serviços</span>
+                <h2 class="section-title">Excelência em<br>cada detalhe</h2>
+                <div class="divider"></div>
+                <p class="section-subtitle">
+                    Cada serviço é executado com precisão, dedicação e os melhores produtos do mercado.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service 1: Corte -->
+                <div class="service-card reveal" style="transition-delay: 0.1s">
+                    <div class="service-card-image">
+                        <img src="assets/service-corte.jpg" alt="Corte de Cabelo Profissional">
+                    </div>
+                    <div class="service-card-content">
+                        <div class="service-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="6" cy="6" r="3" />
+                                <path d="M8.12 8.12 12 12" />
+                                <path d="M20 4 8.12 15.88" />
+                                <circle cx="6" cy="18" r="3" />
+                                <path d="M14.8 14.8 20 20" />
+                            </svg>
+                        </div>
+                        <h3>Corte Masculino</h3>
+                        <p>Cortes modernos e clássicos com técnicas avançadas de degradê, fade e tesoura, personalizados
+                            para o seu estilo.</p>
+                        <div class="service-card-price">
+                            <span class="service-price">R$ 35</span>
+                            <div class="service-card-arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                    <polyline points="12 5 19 12 12 19" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2: Barba -->
+                <div class="service-card reveal" style="transition-delay: 0.2s">
+                    <div class="service-card-image">
+                        <img src="assets/service-barba.jpg" alt="Barba Profissional">
+                    </div>
+                    <div class="service-card-content">
+                        <div class="service-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="m7.5 4.27 9 5.15" />
+                                <path
+                                    d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" />
+                                <path d="m3.3 7 8.7 5 8.7-5" />
+                                <path d="M12 22V12" />
+                            </svg>
+                        </div>
+                        <h3>Barba & Bigode</h3>
+                        <p>Modelagem com navalha, toalha quente e produtos premium para uma barba impecável e
+                            perfeitamente desenhada.</p>
+                        <div class="service-card-price">
+                            <span class="service-price">R$ 25</span>
+                            <div class="service-card-arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                    <polyline points="12 5 19 12 12 19" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3: Nano Fio -->
+                <div class="service-card reveal" style="transition-delay: 0.3s">
+                    <div class="service-card-image">
+                        <img src="assets/service-nanofio.jpg" alt="Nano Fio Preenchimento">
+                    </div>
+                    <div class="service-card-content">
+                        <div class="service-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+                                <path d="m9 12 2 2 4-4" />
+                            </svg>
+                        </div>
+                        <h3>Nano Fio</h3>
+                        <p>Técnica inovadora de preenchimento de falhas na barba com resultado natural e duradouro.
+                            Preencha e valorize seu visual.</p>
+                        <div class="service-card-price">
+                            <span class="service-price">Consulte</span>
+                            <div class="service-card-arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                    <polyline points="12 5 19 12 12 19" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 4: Sobrancelha -->
+                <div class="service-card reveal" style="transition-delay: 0.4s">
+                    <div class="service-card-image">
+                        <img src="assets/service-sobrancelha.jpg" alt="Design de Sobrancelha">
+                    </div>
+                    <div class="service-card-content">
+                        <div class="service-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                                <circle cx="12" cy="12" r="3" />
+                            </svg>
+                        </div>
+                        <h3>Sobrancelha</h3>
+                        <p>Design e modelagem de sobrancelha com precisão, realçando a harmonia facial e o seu olhar.
+                        </p>
+                        <div class="service-card-price">
+                            <span class="service-price">R$ 15</span>
+                            <div class="service-card-arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                    <polyline points="12 5 19 12 12 19" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE STRIP -->
+    <section class="experience-strip">
+        <div class="container">
+            <div class="experience-grid">
+                <div class="experience-item reveal" style="transition-delay: 0.1s">
+                    <div class="experience-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+                        </svg>
+                    </div>
+                    <h4>Profissionais Qualificados</h4>
+                    <p>Barbeiros com vasta experiência e em constante atualização das tendências.</p>
+                </div>
+                <div class="experience-item reveal" style="transition-delay: 0.2s">
+                    <div class="experience-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                    </div>
+                    <h4>Produtos Premium</h4>
+                    <p>Utilizamos apenas produtos de alta qualidade para cuidar do seu cabelo e barba.</p>
+                </div>
+                <div class="experience-item reveal" style="transition-delay: 0.3s">
+                    <div class="experience-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                    </div>
+                    <h4>Agendamento Fácil</h4>
+                    <p>Agende pelo WhatsApp de forma rápida e prática, sem filas e sem espera.</p>
+                </div>
+                <div class="experience-item reveal" style="transition-delay: 0.4s">
+                    <div class="experience-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z" />
+                        </svg>
+                    </div>
+                    <h4>Ambiente Exclusivo</h4>
+                    <p>Um espaço pensado para proporcionar conforto e relaxamento durante o atendimento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section class="gallery section-padding" id="galeria">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Galeria</span>
+                <h2 class="section-title">Nosso trabalho<br>fala por si</h2>
+                <div class="divider"></div>
+                <p class="section-subtitle">
+                    Confira alguns dos nossos trabalhos e veja a qualidade que entregamos a cada cliente.
+                </p>
+            </div>
+
+            <div class="gallery-grid reveal-scale">
+                <div class="gallery-item">
+                    <img src="assets/hero.jpg" alt="Interior da Barbearia">
+                    <div class="gallery-item-overlay">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8" />
+                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                            <line x1="11" y1="8" x2="11" y2="14" />
+                            <line x1="8" y1="11" x2="14" y2="11" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/service-corte.jpg" alt="Corte Fade">
+                    <div class="gallery-item-overlay">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8" />
+                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                            <line x1="11" y1="8" x2="11" y2="14" />
+                            <line x1="8" y1="11" x2="14" y2="11" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/service-barba.jpg" alt="Barba Modelada">
+                    <div class="gallery-item-overlay">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8" />
+                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                            <line x1="11" y1="8" x2="11" y2="14" />
+                            <line x1="8" y1="11" x2="14" y2="11" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/service-nanofio.jpg" alt="Nano Fio">
+                    <div class="gallery-item-overlay">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8" />
+                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                            <line x1="11" y1="8" x2="11" y2="14" />
+                            <line x1="8" y1="11" x2="14" y2="11" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/service-sobrancelha.jpg" alt="Design de Sobrancelha">
+                    <div class="gallery-item-overlay">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8" />
+                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                            <line x1="11" y1="8" x2="11" y2="14" />
+                            <line x1="8" y1="11" x2="14" y2="11" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials section-padding" id="depoimentos">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Depoimentos</span>
+                <h2 class="section-title">O que nossos clientes<br>dizem sobre nós</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="testimonials-slider reveal">
+                <div class="testimonials-track" id="testimonialsTrack">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-inner">
+                            <div class="testimonial-stars">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="1">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="1">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="1">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="1">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="1">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                            </div>
+                            <p class="testimonial-text">
+                                "Melhor barbearia de Porto Velho! Jardel é um verdadeiro artista. O ambiente é incrível,
+                                o atendimento é impecável e o resultado do corte sempre supera as expectativas."
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">RM</div>
+                                <div class="testimonial-author-info">
+                                    <h5>Rafael Mendes</h5>
+                                    <span>Cliente há 2 anos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-inner">
+                            <div class="testimonial-stars">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="1">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="1">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="1">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="1">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="1">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                            </div>
+                            <p class="testimonial-text">
+                                "Fiz o Nano Fio na barba e o resultado ficou surpreendente! Muito natural e o Jardel foi
+                                super atencioso explicando todo o procedimento. Super recomendo!"
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">LC</div>
+                                <div class="testimonial-author-info">
+                                    <h5>Lucas Costa</h5>
+                                    <span>Cliente há 1 ano</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-inner">
+                            <div class="testimonial-stars">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="1">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="1">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="1">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="1">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor" stroke="currentColor" stroke-width="1">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                            </div>
+                            <p class="testimonial-text">
+                                "Ambiente acolhedor e muito bem decorado. O corte ficou exatamente como eu queria. A
+                                atenção aos detalhes é impressionante. Virei cliente fiel!"
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">PS</div>
+                                <div class="testimonial-author-info">
+                                    <h5>Pedro Santos</h5>
+                                    <span>Cliente há 3 anos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonials-nav">
+                <button onclick="moveTestimonial(-1)" aria-label="Anterior">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6" />
+                    </svg>
+                </button>
+                <button onclick="moveTestimonial(1)" aria-label="Próximo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="testimonials-dots" id="testimonialsDots">
+                <button class="active" onclick="goToTestimonial(0)"></button>
+                <button onclick="goToTestimonial(1)"></button>
+                <button onclick="goToTestimonial(2)"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section class="pricing section-padding" id="precos">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Tabela de Preços</span>
+                <h2 class="section-title">Investimento no<br>seu visual</h2>
+                <div class="divider"></div>
+                <p class="section-subtitle">
+                    Valores acessíveis com a qualidade que você merece. Consulte combos e promoções especiais.
+                </p>
+            </div>
+
+            <div class="pricing-table reveal-scale">
+                <div class="pricing-header">
+                    <h3>Serviços & Valores</h3>
+                    <p>Valores sujeitos a alteração. Consulte via WhatsApp.</p>
+                </div>
+                <div class="pricing-list">
+                    <div class="pricing-item">
+                        <div class="pricing-item-info">
+                            <div class="pricing-item-dot"></div>
+                            <div>
+                                <div class="pricing-item-name">Corte Masculino</div>
+                                <div class="pricing-item-duration">≈ 40 minutos</div>
+                            </div>
+                        </div>
+                        <div class="pricing-item-price">R$ 45,00</div>
+                    </div>
+                    <div class="pricing-item">
+                        <div class="pricing-item-info">
+                            <div class="pricing-item-dot"></div>
+                            <div>
+                                <div class="pricing-item-name">Barba Completa</div>
+                                <div class="pricing-item-duration">≈ 30 minutos</div>
+                            </div>
+                        </div>
+                        <div class="pricing-item-price">R$ 25,00</div>
+                    </div>
+                    <div class="pricing-item">
+                        <div class="pricing-item-info">
+                            <div class="pricing-item-dot"></div>
+                            <div>
+                                <div class="pricing-item-name">Corte + Barba</div>
+                                <div class="pricing-item-duration">≈ 60 minutos</div>
+                            </div>
+                        </div>
+                        <div class="pricing-item-price">R$ 55,00</div>
+                    </div>
+                    <div class="pricing-item">
+                        <div class="pricing-item-info">
+                            <div class="pricing-item-dot"></div>
+                            <div>
+                                <div class="pricing-item-name">Sobrancelha</div>
+                                <div class="pricing-item-duration">≈ 15 minutos</div>
+                            </div>
+                        </div>
+                        <div class="pricing-item-price">R$ 15,00</div>
+                    </div>
+                    <div class="pricing-item">
+                        <div class="pricing-item-info">
+                            <div class="pricing-item-dot"></div>
+                            <div>
+                                <div class="pricing-item-name">Corte + Barba + Sobrancelha</div>
+                                <div class="pricing-item-duration">≈ 75 minutos • Combo completo</div>
+                            </div>
+                        </div>
+                        <div class="pricing-item-price">R$ 65,00</div>
+                    </div>
+                    <div class="pricing-item">
+                        <div class="pricing-item-info">
+                            <div class="pricing-item-dot"></div>
+                            <div>
+                                <div class="pricing-item-name">Nano Fio</div>
+                                <div class="pricing-item-duration">Preenchimento de falhas na barba</div>
+                            </div>
+                        </div>
+                        <div class="pricing-item-price">Consulte</div>
+                    </div>
+                </div>
+                <div class="pricing-footer">
+                    <a href="https://wa.me/5569992373924?text=Olá! Gostaria de saber mais sobre os preços e agendar um horário."
+                        target="_blank" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
+                        Agendar pelo WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content reveal">
+                <span class="section-label" style="color: var(--color-gold-light);">Não perca tempo</span>
+                <h2>Agende seu horário<br>agora mesmo</h2>
+                <p>Transforme seu visual com quem entende do assunto. Clique abaixo e fale diretamente conosco pelo
+                    WhatsApp.</p>
+                <a href="https://wa.me/5569992373924?text=Olá! Gostaria de agendar um horário na Barbearia Jardel Gomes."
+                    target="_blank" class="btn btn-whatsapp" style="font-size: 0.9rem;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                    </svg>
+                    Fale Conosco no WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT / LOCATION SECTION -->
+    <section class="contact section-padding" id="contato">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Localização & Contato</span>
+                <h2 class="section-title">Venha nos visitar</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info reveal-left">
+                    <h3>Estamos te<br>esperando.</h3>
+
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Endereço</h4>
+                            <p>Av. Pref. Chiquilito Erse, 4887<br>Industrial — Porto Velho, RO<br>CEP: 76821-299</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <a href="https://wa.me/5569992373924" target="_blank">(69) 99237-3924</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect width="20" height="16" x="2" y="4" rx="2" />
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Redes Sociais</h4>
+                            <a href="https://www.instagram.com/barbearia_jardelgomes"
+                                target="_blank">@barbearia_jardelgomes</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-hours">
+                        <h4
+                            style="font-size: 1rem; font-weight: 600; color: var(--color-white); margin-bottom: var(--space-md);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                style="vertical-align: middle; margin-right: 8px; color: var(--color-gold)">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                            Horário de Funcionamento
+                        </h4>
+                        <div class="contact-hours-grid">
+                            <div class="contact-hours-row">
+                                <span class="day">Segunda a Sexta</span>
+                                <span class="time">08:00 — 20:00</span>
+                            </div>
+                            <div class="contact-hours-row">
+                                <span class="day">Sábado</span>
+                                <span class="time">08:00 — 18:00</span>
+                            </div>
+                            <div class="contact-hours-row">
+                                <span class="day">Domingo</span>
+                                <span class="time closed">Fechado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-map reveal-right">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.0!2d-63.9!3d-8.76!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92324344f65116af%3A0xb709d6c6cb045e78!2sBarbearia%20Jardel%20Gomes!5e0!3m2!1spt-BR!2sbr!4v1695000000000!5m2!1spt-BR!2sbr"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        title="Localização Barbearia Jardel Gomes">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <img src="assets/logo.png" alt="Barbearia Jardel Gomes">
+                        <p>A melhor experiência em barbearia de Porto Velho. Tradição, estilo e sofisticação reunidos em
+                            um só lugar.</p>
+                        <div class="footer-social">
+                            <a href="https://www.instagram.com/barbearia_jardelgomes" target="_blank"
+                                aria-label="Instagram">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                                </svg>
+                            </a>
+                            <a href="https://wa.me/5569992373924" target="_blank" aria-label="WhatsApp">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg>
+                            </a>
+                            <a href="https://maps.app.goo.gl/vtfAaTCwTn8XR3qf7" target="_blank"
+                                aria-label="Google Maps">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Navegação</h4>
+                        <ul>
+                            <li><a href="#inicio">Início</a></li>
+                            <li><a href="#sobre">Sobre</a></li>
+                            <li><a href="#servicos">Serviços</a></li>
+                            <li><a href="#galeria">Galeria</a></li>
+                            <li><a href="#precos">Preços</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Serviços</h4>
+                        <ul>
+                            <li><a href="#servicos">Corte Masculino</a></li>
+                            <li><a href="#servicos">Barba & Bigode</a></li>
+                            <li><a href="#servicos">Sobrancelha</a></li>
+                            <li><a href="#servicos">Nano Fio</a></li>
+                            <li><a href="#servicos">Combo Completo</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contato</h4>
+                        <ul>
+                            <li><a href="https://wa.me/5569992373924" target="_blank">(69) 99237-3924</a></li>
+                            <li><a href="https://www.instagram.com/barbearia_jardelgomes" target="_blank">Instagram</a>
+                            </li>
+                            <li><a href="https://maps.app.goo.gl/vtfAaTCwTn8XR3qf7" target="_blank">Google Maps</a></li>
+                            <li><a href="#contato">Localização</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 Barbearia Jardel Gomes. Todos os direitos reservados.</p>
+                <p>Feito com ❤️ em Porto Velho</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <a href="https://wa.me/5569992373924?text=Olá! Gostaria de agendar um horário na Barbearia Jardel Gomes."
+        target="_blank" class="whatsapp-float" aria-label="Contato via WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+        </svg>
+    </a>
+
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15" />
+        </svg>
+    </button>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // ============================================
+        // PRELOADER
+        // ============================================
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('preloader').classList.add('hidden');
+            }, 2000);
+        });
+
+        // ============================================
+        // NAVBAR SCROLL EFFECT
+        // ============================================
+        const navbar = document.getElementById('navbar');
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ============================================
+        // MOBILE MENU
+        // ============================================
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // ============================================
+        // REVEAL ON SCROLL (Intersection Observer)
+        // ============================================
+        const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // ============================================
+        // COUNTER ANIMATION
+        // ============================================
+        const counters = document.querySelectorAll('.counter');
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = parseInt(entry.target.getAttribute('data-target'));
+                    if (target) {
+                        animateCounter(entry.target, target);
+                    }
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(counter => counterObserver.observe(counter));
+
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 60;
+            const duration = 2000;
+            const stepTime = duration / 60;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current).toLocaleString('pt-BR');
+                if (target >= 1000) {
+                    element.textContent = Math.floor(current).toLocaleString('pt-BR').replace('.', '.');
+                }
+            }, stepTime);
+        }
+
+        // ============================================
+        // TESTIMONIALS SLIDER
+        // ============================================
+        let currentTestimonial = 0;
+        const totalTestimonials = 3;
+        const track = document.getElementById('testimonialsTrack');
+        const dots = document.getElementById('testimonialsDots');
+
+        function updateTestimonial() {
+            track.style.transform = `translateX(-${currentTestimonial * 100}%)`;
+            dots.querySelectorAll('button').forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentTestimonial);
+            });
+        }
+
+        function moveTestimonial(direction) {
+            currentTestimonial = (currentTestimonial + direction + totalTestimonials) % totalTestimonials;
+            updateTestimonial();
+        }
+
+        function goToTestimonial(index) {
+            currentTestimonial = index;
+            updateTestimonial();
+        }
+
+        // Auto-play testimonials
+        setInterval(() => {
+            moveTestimonial(1);
+        }, 6000);
+
+        // ============================================
+        // SMOOTH SCROLL FOR ANCHOR LINKS
+        // ============================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ============================================
+        // PARALLAX EFFECT ON HERO
+        // ============================================
+        window.addEventListener('scroll', () => {
+            const heroImg = document.querySelector('.hero-bg img');
+            if (heroImg && window.scrollY < window.innerHeight) {
+                heroImg.style.transform = `scale(1.1) translateY(${window.scrollY * 0.15}px)`;
+            }
+        });
+
+        // ============================================
+        // SERVICE CARDS CLICK → WHATSAPP
+        // ============================================
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const serviceName = card.querySelector('h3').textContent;
+                window.open(`https://wa.me/5569992373924?text=Olá! Gostaria de agendar o serviço: ${encodeURIComponent(serviceName)}`, '_blank');
+            });
+        });
+    </script>
+
+</body>
+
+</html>
